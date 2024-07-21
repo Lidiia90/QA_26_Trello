@@ -25,6 +25,8 @@ public class LoginPage extends BasePage {
     WebElement inputPassword;
     @FindBy(xpath = "//span[text()='Log in']/..")
     WebElement btnLoginSubmit;
+    @FindBy(id = "mfa-promote-dismiss")
+    WebElement continueWithoutTwoStepVerification;
 
     public LoginPage typeEmail(UserDTO user) {
         inputEmail.sendKeys(user.getEmail());
@@ -39,6 +41,9 @@ public class LoginPage extends BasePage {
                     .until(ExpectedConditions.visibilityOf(inputPassword)).sendKeys(user.getPassword());
             //inputPassword.sendKeys(user.getPassword());
             btnLoginSubmit.click();
+            //================
+          //  if(isElementClickable(continueWithoutTwoStepVerification, 3))
+            //    continueWithoutTwoStepVerification.click();
             return new BoardsPage(driver);
         }
     }

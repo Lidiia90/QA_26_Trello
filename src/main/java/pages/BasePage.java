@@ -42,5 +42,15 @@ public class BasePage {
             return false;
         }
     }
+    public boolean isElementClickable(WebElement element, int time){
+        try{
+            WebElement element1 = new WebDriverWait(driver, Duration.ofSeconds(time))
+                    .until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
 
