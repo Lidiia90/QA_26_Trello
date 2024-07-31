@@ -52,5 +52,10 @@ public class BasePage {
             return false;
         }
     }
+    public void clickWait(WebElement element, int time){
+        new WebDriverWait(driver, Duration.ofSeconds(time))
+                .until(ExpectedConditions.elementToBeClickable(element))
+                .click();
+    }
 }
 

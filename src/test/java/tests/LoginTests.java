@@ -2,6 +2,8 @@ package tests;
 
 import dto.UserDTO;
 import manager.ApplicationManager;
+import manager.TakeScreenShot;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
@@ -20,6 +22,7 @@ public class LoginTests extends ApplicationManager {
         homePage.clickBtnLogin()
         .typeEmail(user)
                 .typePassword(user);
+        TakeScreenShot.takeScreenShot((TakesScreenshot)getDriver());
     }
     }
 
