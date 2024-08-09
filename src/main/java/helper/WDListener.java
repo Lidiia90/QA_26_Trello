@@ -1,10 +1,10 @@
-package manager;
+package helper;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import static manager.TakeScreenShot.takeScreenShot;
+import static helper.TakeScreenShot.takeScreenShot;
 
 //Deprecated realization WDListeners
 public class WDListener extends AbstractWebDriverEventListener {

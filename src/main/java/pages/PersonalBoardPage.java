@@ -7,10 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class PersonalBoardPage extends BasePage {
+public class PersonalBoardPage extends BasePage{
     public PersonalBoardPage(WebDriver driver) {
         setDriver(driver);
-        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+        PageFactory.initElements(
+                new AjaxElementLocatorFactory(driver, 10), this);
     }
     @FindBy(xpath = "//h1[@data-testid='board-name-display']")
     WebElement nameBoard;
@@ -30,11 +31,19 @@ public class PersonalBoardPage extends BasePage {
     }
 
     public BoardsPage deleteBoard(BoardDTO board) {
-   btnDots.click();
-   btnCloseBoard.click();
-   btnCloseConfirm.click();
-   btnDeleteBoard.click();
-   btnDeleteBoardConfirm.click();
-   return new BoardsPage(driver);
+        btnDots.click();
+        btnCloseBoard.click();
+        btnCloseConfirm.click();
+        btnDeleteBoard.click();
+        btnDeleteBoardConfirm.click();
+        return new BoardsPage(driver);
+    }
+    public BoardsPage deleteBoard() {
+        btnDots.click();
+        btnCloseBoard.click();
+        btnCloseConfirm.click();
+        btnDeleteBoard.click();
+        btnDeleteBoardConfirm.click();
+        return new BoardsPage(driver);
     }
 }

@@ -1,21 +1,17 @@
 package tests;
 
-import dto.UserDTO;
 import manager.ApplicationManager;
-import manager.TakeScreenShot;
+import helper.TakeScreenShot;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import static manager.PropertiesReader.getProperty;
 
 public class LoginTests extends ApplicationManager {
 
-    UserDTO user = UserDTO.builder()
-            .email(getProperty("login.properties", "email"))
-            .password(getProperty("login.properties", "password"))
-            .build();
+//    UserDTO user = UserDTO.builder()
+//            .email(getProperty("login.properties", "email"))
+//            .password(getProperty("login.properties", "password"))
+//            .build();
 
     @Test
     public void loginTest(){
