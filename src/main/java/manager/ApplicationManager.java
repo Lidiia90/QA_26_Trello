@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.WebDriverListener;
 import org.slf4j.Logger;
@@ -35,8 +36,10 @@ public class ApplicationManager {
     @BeforeMethod
     public void setup(){
         ChromeOptions chromeOptions = new ChromeOptions().addArguments("--lang=en");
-        //driver = new ChromeDriver(chromeOptions);
-        driver = new FirefoxDriver();
+        FirefoxOptions firefoxOptions = new FirefoxOptions().addArguments("--lang=en");
+        //firefoxOptions.addArguments("--accept-cookies");
+        driver = new ChromeDriver(chromeOptions);
+        //driver = new FirefoxDriver(firefoxOptions);
         //new realization WDListeners in Selenium 4
         WebDriverListener webDriverListener = new WDListenerNew();
         driver = new EventFiringDecorator(webDriverListener).decorate(driver);
