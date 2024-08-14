@@ -35,6 +35,7 @@ public class BoardsPage extends BasePage {
     @FindBy(xpath = "//a[@data-testid='account-menu-activity']")
     WebElement btnActivity;
 
+
     public BoardsPage typeBoardTitle(BoardDTO board){
         btnCreateBoard.click();
         inputBoardTitle.sendKeys(board.getBoardTitle());
@@ -42,7 +43,8 @@ public class BoardsPage extends BasePage {
     }
 
     public PersonalBoardPage clickBtnCreateSubmitPositive(){
-        btnCreateSubmit.click();
+        //btnCreateSubmit.click();
+        clickWait(btnCreateSubmit, 5);
         return new PersonalBoardPage(driver);
     }
     public BoardsPage clickBtnCreateSubmitNegative(){

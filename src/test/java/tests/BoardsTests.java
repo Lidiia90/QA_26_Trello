@@ -90,9 +90,13 @@ public class BoardsTests extends ApplicationManager {
         BoardDTO board = BoardDTO.builder()
                 .boardTitle("QA26-" + i)
                 .build();
-        PersonalBoardPage personalBoardPage = boardsPage
+        Assert.assertTrue(boardsPage
                 .typeBoardTitle(board)
-                .clickBtnCreateSubmitPositive();
+                .clickBtnCreateSubmitPositive()
+        .deleteBoard(board)
+                .goToPageActivity()
+                .isTextFirstElementActivitiesPresent());
+
 //        if (personalBoardPage.isTextInElementPresent_nameBoard(board.getBoardTitle())) {
 //            Assert.assertTrue(personalBoardPage.deleteBoard(board)
 //                    .isTextPopUpPresent());
