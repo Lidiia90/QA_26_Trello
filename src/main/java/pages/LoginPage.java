@@ -1,6 +1,7 @@
 package pages;
 
 import dto.UserDTO;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,12 +29,14 @@ public class LoginPage extends BasePage {
     @FindBy(id = "mfa-promote-dismiss")
     WebElement continueWithoutTwoStepVerification;
 
+    @Step("Step 2 annotation")
     public LoginPage typeEmail(UserDTO user) {
         inputEmail.sendKeys(user.getEmail());
         btnContinue.click();
         return this;
     }
 
+    @Step("Step 3 annotation")
     public BoardsPage typePassword(UserDTO user) {
         //pause(5);
         {

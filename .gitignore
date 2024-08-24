@@ -17,6 +17,8 @@ src/main/resources/photos
 src/main/resources/files_csv
 src/main/resources/properties
 src/main/resources/serialize
+*.json
+allure
 
 ### Eclipse ###
 .apt_generated

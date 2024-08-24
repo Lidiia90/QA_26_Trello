@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.Allure;
+import jdk.jfr.Description;
 import manager.ApplicationManager;
 import helper.TakeScreenShot;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,8 +15,11 @@ public class LoginTests extends ApplicationManager {
 //            .password(getProperty("login.properties", "password"))
 //            .build();
 
+    @Description("Test login in to")
     @Test
     public void loginTest(){
+        Allure.description("Test login in to");
+
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin()
         .typeEmail(user)

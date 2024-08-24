@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']")
     WebElement btnLogin;
 
+    @Step("Step 1 annotation")
     public LoginPage clickBtnLogin(){
         btnLogin.click();
         return new LoginPage(driver);
